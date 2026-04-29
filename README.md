@@ -40,7 +40,7 @@ opkg remove dnsmasq
 opkg install dnsmasq-full
 ```
 
-Step 4. Install required kernel modules packages.
+Step 4. Install required kernel modules packages. *Might be already installed, but just case for routers that didn't.*
 
 ```bash
 opkg install kmod-nft-tproxy kmod-nft-socket
@@ -76,6 +76,13 @@ Step 8. Install Passwall2 for LuCI
 ```bash
 opkg install luci-app-passwall2
 ```
+
+Step 9. Reboot router for all Passwall2 to be fully working.
+
+```bash
+reboot
+```
+
 
 
 
