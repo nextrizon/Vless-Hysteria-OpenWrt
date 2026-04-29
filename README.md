@@ -52,4 +52,17 @@ wget https://master.dl.sourceforge.net/project/openwrt-passwall-build/ipk.pub -O
 opkg-key add passwall.pub
 ```
 
-Step 6
+Step 6. Create a custom feed for the Passwall packages from Sourceforge repo
+
+```bash
+read release arch << EOF
+$(. /etc/openwrt_release ; echo ${DISTRIB_RELEASE%.*} $DISTRIB_ARCH)
+EOF
+
+for feed in passwall_packages passwall2; do
+echo "src/gz $feed https://master.dl.sourceforge.net/project/openwrt-passwall-build/releases/packages-$release/$arch/$feed" >> /etc/opkg/customfeeds.conf
+done
+```
+
+Step 7. 
+
