@@ -83,6 +83,19 @@ Step 9. Reboot router for all Passwall2 to be fully working.
 reboot
 ```
 
+> [!NOTE]
+>You should now see `Passwall 2` sub-menu under the `Services' main menu.
+
+##Optional: Install Argo Theme for LuCI web admin
+
+I personally think Passwall2 looks better in Argon theme than the default bootstrap theme. Use the following command lines to install it.
+
+```bash
+opkg install luci-compat
+opkg install luci-lib-ipkg
+wget --no-check-certificate -O luci-theme-argon.ipk https://github.com/jerrykuku/luci-theme-argon/releases/download/v2.3.2/luci-theme-argon_2.3.2-r20250207_all.ipk
+opkg install luci-theme-argone.ipk
+```
 
 
 
