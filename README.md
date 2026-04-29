@@ -1,8 +1,9 @@
-## Installing OpenWall2(Vless/Hysteria2) on a GL-iNet MT3000 Router with Fork version of OpenWrt
+## Installing Openwall2 on a GL-iNet MT3000 Router with Fork version of OpenWrt
 ___
 
 > [!NOTE]
 > As of writing of this guide, GL-iNet newest fork for OpenWrt is 24.10 and have not release a fork of 25.12. So we will be using the older **opkg** package installer instead of the newer **apk** installer.
+> 25.12 has an issue with it's public key system that treat all 3rd party repos' package as untrusted even after public key is saved to OpenWrt's config. I will write a 25.12 guide once the public key system has been fixed.
 
 > [!WARNING]
 > I'm not responsible if this guide brick your router. If it does happen, you can try using [this guide](https://docs.gl-inet.com/router/en/3/tutorials/debrick/) to restore the firmware for your GL-iNet router.
@@ -64,5 +65,17 @@ echo "src/gz $feed https://master.dl.sourceforge.net/project/openwrt-passwall-bu
 done
 ```
 
-Step 7. 
+Step 7. Run opkg update again for Passwall2 repo
+
+```bash
+opkg update
+```
+
+Step 8. Install Passwall2 for LuCI
+
+```bash
+opkg install luci-app-passwall2
+```
+
+
 
