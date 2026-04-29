@@ -71,10 +71,10 @@ Step 7. Run opkg update again for Passwall2 repo
 opkg update
 ```
 
-Step 8. Install Passwall2 for LuCI
+Step 8. Install Passwall2 and couple of other proxy protocols
 
 ```bash
-opkg install luci-app-passwall2
+opkg install luci-app-passwall2 sing-box v2ray-plugin hysteria naiveproxy chinadns-ng dns2socks
 ```
 
 Step 9. Reboot router for all Passwall2 to be fully working.
