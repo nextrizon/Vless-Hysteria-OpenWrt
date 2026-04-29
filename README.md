@@ -38,3 +38,18 @@ Step 3. Remove the default dnsmasq and install dnsmasq-full package.
 opkg remove dnsmasq
 opkg install dnsmasq-full
 ```
+
+Step 4. Install required kernel modules packages.
+
+```bash
+opkg install kmod-nft-tproxy kmod-nft-socket
+```
+
+Step 5. Add the public key from Sourceforge repo for the need Passwall packages.
+
+```bash
+wget https://master.dl.sourceforge.net/project/openwrt-passwall-build/ipk.pub -O passwall.pub
+opkg-key add passwall.pub
+```
+
+Step 6
