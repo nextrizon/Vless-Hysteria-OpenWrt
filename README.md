@@ -3,13 +3,13 @@ ___
 
 > [!NOTE]
 > As of writing of this guide, GL-iNet newest fork for OpenWrt is 24.10 and have not release a fork of 25.12. So we will be using the older **opkg** package installer instead of the newer **apk** installer.
-> 25.12 has an issue with it's public key system that treat all 3rd party repos' package as untrusted even after public key is saved to OpenWrt's config. I will write a 25.12 guide once the public key system has been fixed.
+> 25.12 has an issue with it's public key system that treat all 3rd party repos' package as untrusted even after public key is saved to the OpenWrt's key folder. I will write a 25.12 guide once the public key system has been fixed.
 
 > [!WARNING]
 > I'm not responsible if this guide brick your router. If it does happen, you can try using [this guide](https://docs.gl-inet.com/router/en/3/tutorials/debrick/) to restore the firmware for your GL-iNet router.
 
 > [!IMPORTANT]
-> I setup this up on a **GL-iNet MT3000(Beryl AX) Travel WiFi router**. But this guide should also work for GL-iNet MT2500A/MT6000 and any OpenWrt router using an ARM Cortex-A53 processor with at least 256MB of flash storage. The router will have use up of total ~220MB of flash storage after setting up the Vless/Hysteria2 client node.
+> I setup this up on a **GL-iNet MT3000(Beryl AX) Travel WiFi router**. But this guide should also work for GL-iNet MT2500A/MT6000 or any OpenWrt router with at least 256MB of flash storage. After the install, my MT3000 shows it has about 40% of memory left, so routers with 128MB will not have enough memory.
 
 ### Prerequisites
 ___
