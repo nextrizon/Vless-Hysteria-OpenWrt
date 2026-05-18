@@ -93,6 +93,7 @@ I personally think Passwall2 looks better in Argon theme than the default bootst
 ```bash
 opkg install luci-compat
 opkg install luci-lib-ipkg
+cd /tmp
 wget --no-check-certificate -O luci-theme-argon.ipk https://github.com/jerrykuku/luci-theme-argon/releases/download/v2.3.2/luci-theme-argon_2.3.2-r20250207_all.ipk
 opkg install luci-theme-argone.ipk
 ```
