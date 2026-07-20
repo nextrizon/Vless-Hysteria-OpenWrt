@@ -42,14 +42,13 @@ apk add dnsmasq-full
 Step 4. Install required kernel modules packages. *Might be already installed, but just case for routers that didn't.*
 
 ```bash
-add add kmod-nft-tproxy kmod-nft-socket
+apk add kmod-nft-tproxy kmod-nft-socket
 ```
 
 Step 5. Add the public key from Sourceforge repo for the need Passwall packages.
 
 ```bash
-wget https://master.dl.sourceforge.net/project/openwrt-passwall-build/ipk.pub -O passwall.pub
-opkg-key add passwall.pub
+wget https://master.dl.sourceforge.net/project/openwrt-passwall-build/apk.pub -O /etc/apk/keys/passwall.pub
 ```
 
 Step 6. Create a custom feed for the Passwall packages from Sourceforge repo
