@@ -14,8 +14,9 @@ ___
 1. Download the latest version of GL-iNet's fork of OpenWrt firmware at https://dl.gl-inet.com/router/mt3000/openwrt25.
 2. Log into the GL-Inet's Web Admin Panel at http://192.168.8.1
 3. From the `System` menu, select `Upgrade`, and upload downloaded firmware from `Firmware Local Upgrade` menu.
-4. Once finish installing the OpenWrt firmware and after the router will reboot, and log back into router.
-5. Got to the `Advanced Settings` menu and select `Install Now` to install OpenWrt's LuCI Web Admin.
+4. If you're upgrading from 24.10 base firmware, switch the `Keep Setting` to Off as many settings have been changed.
+5. Once finish installing the OpenWrt firmware and after the router will reboot, and log back into router.
+6. Got to the `Advanced Settings` menu and select `Install Now` to install OpenWrt's LuCI Web Admin.
 
 ### Installation
 ___
