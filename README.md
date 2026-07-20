@@ -1,19 +1,17 @@
 ## Installing Openwall2 on a GL-iNet MT3000 Router with Fork version of OpenWrt
 ___
 
+>This guide can be use with any router that has OpenWrt 25.12 firmware with at least 256MB of flash storage. After the install, my MT3000 shows it has about 40% of memory left, so routers with 128MB might not have enough memory. Just skip the **Prerequisties** section and go to the **Installation** section.
+
 > [!NOTE]
-> As of writing of this guide, GL-iNet newest fork for OpenWrt is 24.10 and have not release a fork of 25.12. So we will be using the older **opkg** package installer instead of the newer **apk** installer.
-> 25.12 has an issue with it's public key system that treat all 3rd party repos' package as untrusted even after public key is saved to the OpenWrt's key folder. I will write a 25.12 guide once the public key system has been fixed.
+> As of writing of this guide, GL-iNet newest fork for OpenWrt is 25.12 and it switched from the older **opkg** package installer to the newer **apk** installer. 
 
 > [!WARNING]
 > I'm not responsible if this guide brick your router. If it does happen, you can try using [this guide](https://docs.gl-inet.com/router/en/3/tutorials/debrick/) to restore the firmware for your GL-iNet router.
 
-> [!IMPORTANT]
-> I setup this up on a **GL-iNet MT3000(Beryl AX) Travel WiFi router**. But this guide should also work for GL-iNet MT2500A/MT6000 or any OpenWrt router with at least 256MB of flash storage. After the install, my MT3000 shows it has about 40% of memory left, so routers with 128MB will not have enough memory.
-
 ### Prerequisites
 ___
-1. Download the latest version of GL-iNet's fork of OpenWrt firmware at https://dl.gl-inet.com/router/mt3000/openwrt24.
+1. Download the latest version of GL-iNet's fork of OpenWrt firmware at https://dl.gl-inet.com/router/mt3000/openwrt25.
 2. Log into the GL-Inet's Web Admin Panel at http://192.168.8.1
 3. From the `System` menu, select `Upgrade`, and upload downloaded firmware from `Firmware Local Upgrade` menu.
 4. Once finish installing the OpenWrt firmware and after the router will reboot, and log back into router.
@@ -25,25 +23,25 @@ Step 1. Ssh into your router at 192.168.8.1 as _root_ user with **PuTTY** for Wi
 Step 2. Run update for OpenWrt packages.
 
 ```bash
-opkg update
+apk update
 ```
 > [!NOTE]
 >If you haven't install LuCI from the Admin Panel webpage, use the following command to install it.
 ```bash
-opkg install luci-app-opkg
+apk add luci-app-opkg
 ```
 
 Step 3. Remove the default dnsmasq and install dnsmasq-full package.
 
 ```bash
-opkg remove dnsmasq
-opkg install dnsmasq-full
+apk del dnsmasq
+apk add dnsmasq-full
 ```
 
 Step 4. Install required kernel modules packages. *Might be already installed, but just case for routers that didn't.*
 
 ```bash
-opkg install kmod-nft-tproxy kmod-nft-socket
+add add kmod-nft-tproxy kmod-nft-socket
 ```
 
 Step 5. Add the public key from Sourceforge repo for the need Passwall packages.
