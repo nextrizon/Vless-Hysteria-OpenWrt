@@ -90,13 +90,13 @@ I personally think Passwall2 looks better with the Argon theme than the default 
 
 ```bash
 cd /tmp
-wget https://github.com/jerrykuku/luci-theme-argon/releases/download/v2.4.5/luci-theme-argon-2.4.5-r1.apk
+wget https://github.com/jerrykuku/luci-theme-argon/releases/download/v2.4.5/luci-theme-argon-2.4.5-r1.apk -O luci-theme-argon.apk
 ```
 ```bash
-wget https://github.com/jerrykuku/luci-theme-argon/releases/download/v2.4.5/luci-app-argon-config-2.4.5-r1.apk
+wget https://github.com/jerrykuku/luci-theme-argon/releases/download/v2.4.5/luci-app-argon-config-2.4.5-r1.apk -O luci-app-argon-config.apk
 ```
 ```bash
-apk add --allow-untrusted ./luci-theme-argon-2.4.5-r1.apk ./luci-app-argon-config-2.4.5-r1.apk
+apk add --allow-untrusted luci*.apk
 ```
 
 
