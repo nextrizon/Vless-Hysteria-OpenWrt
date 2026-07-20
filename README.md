@@ -32,14 +32,14 @@ apk update
 apk add luci-app-opkg
 ```
 
-Step 3. Remove the default dnsmasq and install dnsmasq-full package.
+Step 3. Remove the default dnsmasq and install dnsmasq-full package. *Might be already been installed, but just in case it didn't.*
 
 ```bash
 apk del dnsmasq
 apk add dnsmasq-full
 ```
 
-Step 4. Install required kernel modules packages. *Might be already installed, but just case for routers that didn't.*
+Step 4. Install required kernel modules packages. *Again, might be already installed.*
 
 ```bash
 apk add kmod-nft-tproxy kmod-nft-socket
@@ -59,7 +59,7 @@ $(. /etc/openwrt_release ; echo ${DISTRIB_RELEASE%.*} $DISTRIB_ARCH)
 EOF
 
 for feed in passwall_packages passwall2; do
-echo "src/gz $feed https://master.dl.sourceforge.net/project/openwrt-passwall-build/releases/packages-$release/$arch/$feed" >> /etc/opkg/customfeeds.conf
+echo "src/gz $feed https://master.dl.sourceforge.net/project/openwrt-passwall-build/releases/packages-$release/$arch/$feed" >> /etc/apk/repositories.d/customfeeds.list
 done
 ```
 
