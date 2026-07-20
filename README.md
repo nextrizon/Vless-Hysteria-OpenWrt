@@ -66,13 +66,13 @@ done
 Step 7. Run opkg update again for Passwall2 repo
 
 ```bash
-opkg update
+apk update
 ```
 
 Step 8. Install Passwall2 and couple of other proxy protocols
 
 ```bash
-opkg install luci-app-passwall2 sing-box v2ray-plugin hysteria naiveproxy chinadns-ng dns2socks
+apk add luci-app-passwall2 sing-box v2ray-plugin hysteria naiveproxy chinadns-ng dns2socks
 ```
 
 Step 9. Reboot router for all Passwall2 to be fully working.
@@ -86,14 +86,13 @@ reboot
 
 ##Optional: Install Argo Theme for LuCI web admin
 
-I personally think Passwall2 looks better in Argon theme than the default bootstrap theme. Use the following command lines to install it.
+I personally think Passwall2 looks better with the Argon theme than the default bootstrap theme. Use the following command lines to install it.
 
 ```bash
-opkg install luci-compat
-opkg install luci-lib-ipkg
 cd /tmp
-wget --no-check-certificate -O luci-theme-argon.ipk https://github.com/jerrykuku/luci-theme-argon/releases/download/v2.3.2/luci-theme-argon_2.3.2-r20250207_all.ipk
-opkg install luci-theme-argone.ipk
+wget https://github.com/jerrykuku/luci-theme-argon/releases/download/v2.4.5/luci-theme-argon-2.4.5-r1.apk
+wget https://github.com/jerrykuku/luci-theme-argon/releases/download/v2.4.5/luci-app-argon-config-2.4.5-r1.apk
+apk add --allow-untrusted ./luci-theme-argon-2.4.5-r1.apk ./luci-app-argon-config-2.4.5-r1.apk
 ```
 
 
